@@ -1,0 +1,57 @@
+来源、许可与改动说明
+
+本插件包含两部分的许可，分别履行。
+
+════════════════════════════════════════
+1. 正文（CC BY 4.0）
+════════════════════════════════════════
+
+本插件内置的 vendor/HowToLiveBetter/book/ 与 vendor/HowToLiveBetter/README.md 来自：
+
+  《高性价比人生指南》
+  https://github.com/eternity4719/HowToLiveBetter
+
+- 署名：高性价比人生指南，https://github.com/eternity4719/HowToLiveBetter
+- 许可证：Creative Commons Attribution 4.0 International
+  https://creativecommons.org/licenses/by/4.0/
+- 同步版本：commit 5f210ca953b7b538c042ad8515d5c355b766a194，2026-10-20
+  （`vendor/HowToLiveBetter/VERSION` 记的是短 sha + 日期）
+- 改动说明：正文逐字未改。本插件只对条目做检索、排序和引用，不改写原文。
+
+════════════════════════════════════════
+2. 指令层与算法（MIT）
+════════════════════════════════════════
+
+skill/SKILL.md 改编自原仓库 skills/life-decision-guide/SKILL.md；
+lib/corpus.js 里的档位算法（COST_W / e.ratio）取自原仓库 index.html。
+以上依 MIT 许可使用：
+
+MIT License
+
+Copyright (c) 2026 eternity4719
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+════════════════════════════════════════
+3. 免责
+════════════════════════════════════════
+
+本插件是非官方实现，与原作者无关，未获其背书，也不代表原作者的观点。
+
+本插件不替代医生、律师、会计。书里内容可能过时或有误，请以当地部门、医生、律师为准。

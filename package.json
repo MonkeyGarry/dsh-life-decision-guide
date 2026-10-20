@@ -1,0 +1,48 @@
+{
+  "name": "dsh-life-decision-guide",
+  "version": "0.1.0",
+  "description": "用《高性价比人生指南》正文回答人生决策：先查 765 条条目再回答，按成本与收益排序，每条注明第几节第几条。注册 life-decision-guide skill 与三个查询工具。",
+  "type": "module",
+  "license": "(MIT AND CC-BY-4.0)",
+  "author": "MonkeyGarry",
+  "homepage": "https://github.com/MonkeyGarry/dsh-life-decision-guide",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MonkeyGarry/dsh-life-decision-guide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MonkeyGarry/dsh-life-decision-guide/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "skill",
+    "life-decision-guide",
+    "人生决策",
+    "高性价比人生指南"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "skill",
+    "locale/*.json",
+    "icon.svg",
+    "NOTICE",
+    "LICENSE",
+    "cordis.patch.yml",
+    "vendor/HowToLiveBetter/README.md",
+    "vendor/HowToLiveBetter/VERSION",
+    "vendor/HowToLiveBetter/index.html",
+    "vendor/HowToLiveBetter/book/*.md",
+    "vendor/HowToLiveBetter/LICENSE",
+    "vendor/HowToLiveBetter/LICENSE-CODE"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" }
+  }
+}
