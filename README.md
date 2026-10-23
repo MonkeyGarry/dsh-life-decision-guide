@@ -80,68 +80,6 @@ Copy-Item "$tmp\README.md" vendor\HowToLiveBetter\ -Force
 git -C $tmp rev-parse --short HEAD
 ```
 
-## 发布与维护
-
-### npm 发布
-
-本项目**默认源是国内镜像（npmmirror，只读）**，发布必须显式指向官方源：
-
-```bash
-npm publish --registry=https://registry.npmjs.org
-```
-
-账号开了 2FA 时，二选一：
-
-- 验证器 App（TOTP）：`npm publish --registry=https://registry.npmjs.org --otp=六位码`
-- passkey / 安全密钥：命令行给不了码，改用 **Granular Access Token**，在 npm 网页上勾选 *Allow this token to bypass 2FA*，然后写进 `~/.npmrc`：
-  ```
-  //registry.npmjs.org/:_authToken=npm_你的token
-  ```
-  首包发布时 token 的包范围要选 **All packages**（包还不存在，选不到具体包）。
-
-### 审核与占位版本
-
-新账号首发可能进入 staged review：registry 上先出现 `0.0.0-stage` 占位版本（345 字节空壳），真实版本待审。查状态：
-
-```bash
-npm view dsh-life-decision-guide versions
-npm view dsh-life-decision-guide dist-tags
-```
-
-`0.1.0` 出现在 `versions`、`latest` 变成 `0.1.0` 即通过。期间**不要重复发同一版本**，审核通过前也别装 npm 版（会装到空壳）。
-
-> 本包 `0.1.0` 已通过审核上线：fileCount 50、unpackedSize 2.58 MB，`vendor/` 语料在包内。
-
-### 发新版本
-
-```bash
-# 1) 改 package.json 的 version（如 0.1.1）
-# 2) 更新快照（见上一节）并跑 tools/check.mjs
-# 3) 提交
-git add -A && git commit -m "chore: refresh corpus to <sha>" && git push
-# 4) 发布
-npm publish --registry=https://registry.npmjs.org
-```
-
-### 提交到插件市场
-
-市场读的是 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 的注册表，PR 加一条：
-
-```yaml
-- name: dsh-life-decision-guide
-  owner: MonkeyGarry
-  url: https://github.com/MonkeyGarry/dsh-life-decision-guide
-  category: skill
-  description:
-    en: Answers real-life decisions from the 高性价比人生指南 book: looks up entries first, ranks by cost and benefit, cites section and item.
-    zh: 按《高性价比人生指南》正文回答人生决策：先查条目、按成本与收益排序，每条注明第几节第几条。
-  npm: dsh-life-decision-guide
-  install: dsh plugin --profile web add dsh-life-decision-guide
-```
-
-### 关于 engines.dsh
-
-未声明 `engines.dsh`：DSH 当前版本号带预发布标签（如 `0.2.1-rc.2`），semver 范围容易误判，而 `engines.dsh` 不满足会**直接阻断安装**，所以首版不写。插件在 `0.2.1-rc.2` 上验证通过。
 
 ## 上游、许可与非官方声明
 
